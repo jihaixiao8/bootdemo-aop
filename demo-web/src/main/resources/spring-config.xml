@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+    <bean id="helloWorldService" class="cn.com.jd.service.impl.IHelloWorldServiceImpl" />
+
+    <bean id="aspect" class="cn.com.jd.aspect.HelloWorldAspect" />
+
+    <aop:config>
+        <aop:pointcut id="pointcut" expression="execution(* cn.com.jd.service..*.sayBefore(..)) and args(param)" />
+        <aop:aspect ref="aspect">
+            <aop:before method="beforeAdvice(java.lang.String)" pointcut-ref="pointcut"  arg-names="param" />
+            <aop:after method="afterFinallyAdvice" pointcut="execution(* cn.com.jd.service..*.*(..))" />
+            
+            <aop:after-returning method="afterReturningAdvice" pointcut="execution(* cn.com.jd.service..*.sayAfterReturning(..))"
+                                 arg-names="o" returning="o" />
+
+            <aop:around method="aroundAdvice" pointcut="execution(* cn.com.jd.service..*.sayAround(..))" />
+
+        </aop:aspect>
+    </aop:config>
+
+</beans>
