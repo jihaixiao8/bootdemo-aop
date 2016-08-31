@@ -19,7 +19,7 @@ public class AopTest {
 
     @Test
     public void testHelloWorld(){
-        helloWorldService.sayAround("haha");
+        helloWorldService.getEntity();
     }
 
 }

@@ -15,4 +15,6 @@ public interface IHelloWorldService {
 
     void sayAround(String param);
 
+    void sayHelloWithAnno();
+
 }

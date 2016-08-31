@@ -7,9 +7,16 @@
            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
            http://www.springframework.org/schema/aop
            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+
+    <!-- open aspectj annocations -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
     <bean id="helloWorldService" class="cn.com.jd.service.impl.IHelloWorldServiceImpl" />
 
     <bean id="aspect" class="cn.com.jd.aspect.HelloWorldAspect" />
+
+    <bean id="performanceAspect" class="cn.com.jd.aspect.PerformanceAspect"/>
 
     <aop:config>
         <aop:pointcut id="pointcut" expression="execution(* cn.com.jd.service..*.sayBefore(..)) and args(param)" />

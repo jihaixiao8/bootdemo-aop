@@ -31,4 +31,9 @@ public class IHelloWorldServiceImpl implements IHelloWorldService{
     public void sayAround(String param) {
         System.out.println("-----------around param----------------"+param);
     }
+
+    @Override
+    public void sayHelloWithAnno() {
+        System.out.println("-----------sayHelloWithAnno----------");
+    }
 }
