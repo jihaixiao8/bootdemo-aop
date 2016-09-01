@@ -2,11 +2,13 @@ package cn.com.jd.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 
 /**
  * Created by root on 16-8-31.
  */
 @Aspect
+@Order(5)
 public class PerformanceAspect {
 
     /**
