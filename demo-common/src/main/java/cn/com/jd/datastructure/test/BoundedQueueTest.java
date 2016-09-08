@@ -2,6 +2,8 @@ package cn.com.jd.datastructure.test;
 
 import cn.com.jd.datastructure.BoundedQueue;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by jihaixiao on 2016/9/8.
  */
@@ -10,15 +12,15 @@ public class BoundedQueueTest {
     public static void main(String[] args) throws InterruptedException {
         final BoundedQueue<Integer> queue = new BoundedQueue<Integer>(10);
 
-        for (int i = 0; i< 10;i++){
+        for (int i = 0; i< 11;i++){
             Thread t = new Thread(new Producer(queue,i));
             t.start();
         }
 
-        for (int i = 0; i< 5;i++){
-            Thread t = new Thread(new Consumer(queue));
-            t.start();
-        }
+//        for (int i = 0; i< 10;i++){
+//            Thread t = new Thread(new Consumer(queue));
+//            t.start();
+//        }
 
     }
 
@@ -36,7 +38,8 @@ public class BoundedQueueTest {
         @Override
         public void run() {
             try {
-                queue.add(value);
+                boolean timeout =queue.offer(value,5000, TimeUnit.MILLISECONDS);
+                System.out.println(timeout);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -54,7 +57,7 @@ public class BoundedQueueTest {
         @Override
         public void run() {
             try {
-                int m =queue.remove();
+                int m =queue.take();
                 System.out.println(m);
             } catch (InterruptedException e) {
                 e.printStackTrace();
