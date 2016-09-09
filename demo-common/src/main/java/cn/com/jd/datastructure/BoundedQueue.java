@@ -174,4 +174,27 @@ public class BoundedQueue<E> implements Serializable{
         }
     }
 
+    public E poll(long timeout,TimeUnit unit){
+        long naros = unit.toNanos(timeout);
+        lock.lock();
+        for (;;){
+            if (count != 0){
+                Object o = items[removeIndex];
+                items[removeIndex] = null;
+                if (++removeIndex == items.length)
+                    removeIndex = 0;
+                --count;
+                notFull.signal();
+                return (E) o;
+            }
+
+            if (naros < 0){
+                return null;
+            }
+
+
+
+        }
+    }
+
 }
