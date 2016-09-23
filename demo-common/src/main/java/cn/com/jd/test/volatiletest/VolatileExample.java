@@ -9,7 +9,19 @@ public class VolatileExample extends Thread{
 
     @Override
     public void run() {
-        while (!flag){}
+        while (!flag){
+            Object o = new Object();
+        }
+
+//        for (;;){
+//            if (!flag){
+//                Object o = new Object();
+//            }else {
+//                break;
+//            }
+//
+//        }
+
     }
 
 
