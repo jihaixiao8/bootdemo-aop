@@ -10,6 +10,8 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Person implements Serializable{
 
+    private static final long serialVersionUID = 7605007996474228805L;
+
     private Long id;
 
     private String name;
@@ -30,4 +32,8 @@ public class Person implements Serializable{
         this.name = name;
     }
 
+//    @Override
+//    public int hashCode() {
+//        return 32;
+//    }
 }
