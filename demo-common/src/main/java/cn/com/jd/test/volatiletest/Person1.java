@@ -35,4 +35,13 @@ public class Person1 {
     public void setFlag(Integer flag) {
         this.flag = flag;
     }
+
+    @Override
+    public String toString() {
+        return "Person1{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", flag=" + flag +
+                '}';
+    }
 }

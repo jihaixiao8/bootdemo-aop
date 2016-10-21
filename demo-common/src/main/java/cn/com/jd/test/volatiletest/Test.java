@@ -1,8 +1,10 @@
 package cn.com.jd.test.volatiletest;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
+
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -11,10 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Test {
 
     public static void main(String[] args) {
-        int a = Integer.parseInt("110",2);
-        System.out.println(a ^ (a >>> 16));
-        int b = Integer.parseInt("10",2);
-        System.out.println(b);
+        System.out.println(0x1 +0x2);
     }
 
     public static void plus(AtomicInteger count){

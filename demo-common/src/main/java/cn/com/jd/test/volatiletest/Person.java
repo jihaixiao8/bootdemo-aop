@@ -16,6 +16,8 @@ public class Person implements Serializable{
 
     private String name;
 
+    private Integer flag;
+
     public Long getId() {
         return id;
     }
@@ -30,6 +32,23 @@ public class Person implements Serializable{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Integer flag) {
+        this.flag = flag;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", flag=" + flag +
+                '}';
     }
 
 //    @Override
