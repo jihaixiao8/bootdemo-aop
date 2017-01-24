@@ -116,6 +116,12 @@
                 <version>${jackson.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -185,12 +191,6 @@
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.jd.test</groupId>
-            <artifactId>bootdemo</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>

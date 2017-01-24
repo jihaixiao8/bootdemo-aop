@@ -1,10 +1,12 @@
 package cn.com.jd.test.volatiletest;
 
 
+import org.codehaus.jackson.map.ObjectMapper;
+
+import java.io.IOException;
 import java.text.Format;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -12,12 +14,14 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Test {
 
-    public static void main(String[] args) {
-        System.out.println(0x1 +0x2);
+    public static void main(String[] args) throws IOException {
+
+//        for (int a=0;a<100;a++){
+//            PossibleReording p = new PossibleReording();
+//            p.test();
+//        }
+
     }
 
-    public static void plus(AtomicInteger count){
-        count.incrementAndGet();
-    }
 
 }

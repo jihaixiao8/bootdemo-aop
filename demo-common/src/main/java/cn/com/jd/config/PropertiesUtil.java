@@ -38,6 +38,10 @@ public class PropertiesUtil {
         return props.getProperty(key);
     }
 
+    public void add() {
+        System.out.println(this.toString());
+    }
+
 
     /**
      *

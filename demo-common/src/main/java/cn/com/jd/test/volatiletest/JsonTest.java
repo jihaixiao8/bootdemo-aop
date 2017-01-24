@@ -12,10 +12,7 @@ public class JsonTest {
     private static ObjectMapper OM = new ObjectMapper();
 
     public static void main(String[] args) throws IOException {
-        String json = generate();
-        System.out.println(json);
-        Person p = OM.readValue(json,Person.class);
-        System.out.println(p);
+        System.out.println(1 >>> 2);
     }
 
     public static String generate() throws IOException {

@@ -17,8 +17,8 @@ public class IHelloWorldServiceImpl implements IHelloWorldService{
     }
 
     @Override
-    public void sayBefore(String param) {
-        System.out.println("---say----"+param);
+    public void sayBefore(String parameter) {
+        System.out.println("---say----"+parameter);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class IHelloWorldServiceImpl implements IHelloWorldService{
     }
 
     @Override
-    public void sayAround(String param) {
-        System.out.println("-----------around param----------------"+param);
+    public void sayAround(String parameter) {
+        System.out.println("-----------around parameter----------------"+parameter);
     }
 
     @Override
